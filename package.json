@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "name": "fullstack-laravel-relay",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/jest"
+    ]
+  },
+  "scripts": {
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:restart": "docker-compose restart",
+    "docker:pause": "docker-compose pause",
+    "docker:unpause": "docker-compose unpause",
+    "docker:bash": "docker exec -i -t fullstack-laravel-relay-php /bin/bash",
+    "api:migrate": "docker exec fullstack-laravel-relay-php bash -c 'php artisan migrate'",
+    "api:migrate:refresh": "docker exec fullstack-laravel-relay-php bash -c 'php artisan migrate:refresh'",
+    "api:passport": "docker exec fullstack-laravel-relay-php bash -c 'php artisan passport:install'",
+    "api:seed": "docker exec fullstack-laravel-relay-php bash -c 'php artisan db:seed'",
+    "api:print-schema": "docker exec fullstack-laravel-relay-php bash -c 'php artisan lighthouse:print-schema -W'",
+    "web:start": "yarn workspace web start",
+    "web:build:toapi": "yarn workspace web build:toapi",
+    "web:relay": "yarn workspace web relay"
+  }
+}

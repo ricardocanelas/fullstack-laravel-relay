@@ -1,0 +1,168 @@
+type AuthPayload {
+  access_token: String!
+  refresh_token: String!
+  expires_in: Int!
+  token_type: String!
+  user: User!
+}
+
+"""A date string with format `Y-m-d`, e.g. `2011-05-23`."""
+scalar Date
+
+"""
+A datetime string with format `Y-m-d H:i:s`, e.g. `2018-01-01 13:00:00`.
+"""
+scalar DateTime
+
+input ForgotPasswordInput {
+  email: String!
+}
+
+type ForgotPasswordResponse {
+  status: String!
+  message: String
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}
+
+type LogoutResponse {
+  status: String!
+  message: String
+}
+
+type Mutation {
+  createUser(name: String!, email: String!, password: String!): User!
+  login(data: LoginInput): AuthPayload!
+  refreshToken(data: RefreshTokenInput): RefreshTokenPayload!
+  logout: LogoutResponse!
+  forgotPassword(data: ForgotPasswordInput!): ForgotPasswordResponse!
+  updateForgottenPassword(data: NewPasswordWithCodeInput): ForgotPasswordResponse!
+}
+
+input NewPasswordWithCodeInput {
+  email: String!
+  token: String!
+  password: String!
+  password_confirmation: String!
+}
+
+"""Node global interface"""
+interface Node {
+  """
+  Global identifier that can be used to resolve any Node implementation.
+  """
+  id: ID!
+}
+
+input OrderByClause {
+  field: String!
+  order: SortOrder!
+}
+
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+
+  """Total number of node in connection."""
+  total: Int
+
+  """Count of nodes in current request."""
+  count: Int
+
+  """Current page of request."""
+  currentPage: Int
+
+  """Last page in connection."""
+  lastPage: Int
+}
+
+type PaginatorInfo {
+  """Total count of available items in the page."""
+  count: Int!
+
+  """Current pagination page."""
+  currentPage: Int!
+
+  """Index of first item in the current page."""
+  firstItem: Int
+
+  """If collection has more pages."""
+  hasMorePages: Boolean!
+
+  """Index of last item in the current page."""
+  lastItem: Int
+
+  """Last page number of the collection."""
+  lastPage: Int!
+
+  """Number of items per page in the collection."""
+  perPage: Int!
+
+  """Total items available in the collection."""
+  total: Int!
+}
+
+type Query {
+  me: User
+  users(
+    """Limits number of fetched elements."""
+    first: Int!
+
+    """A cursor after which elements are returned."""
+    after: String
+  ): UserConnection
+  user(id: ID): User
+  node(id: ID!): Node
+}
+
+input RefreshTokenInput {
+  refresh_token: String
+}
+
+type RefreshTokenPayload {
+  access_token: String!
+  refresh_token: String!
+  expires_in: Int!
+  token_type: String!
+}
+
+enum SortOrder {
+  ASC
+  DESC
+}
+
+type User implements Node {
+  id: ID!
+  name: String!
+  email: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type UserConnection {
+  pageInfo: PageInfo!
+  edges: [UserEdge]
+}
+
+type UserDeprecated {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type UserEdge {
+  node: User
+  cursor: String!
+}
