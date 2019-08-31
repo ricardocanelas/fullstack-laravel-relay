@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'relay-hooks'
-import { USERS_QUERY } from '../gralphql/query'
+import { USERS_QUERY } from '../graphql/query'
 
 const UsersPage = () => {
   const { props, error } = useQuery({

@@ -1,11 +1,11 @@
-# Laravel + GralphQL + React Relay
+# Laravel + GraphQL + React Relay
 
 This is my playground that I can play with that stack.
 
 What we have here:
 
-- [x] GralphQL configured in Laravel using Lighthouse
-- [x] Authentication via GralphQL using [Laravel Passport](https://laravel.com/docs/5.8/passport)
+- [x] GraphQL configured in Laravel using Lighthouse
+- [x] Authentication via GraphQL using [Laravel Passport](https://laravel.com/docs/5.8/passport)
 - [x] A project using React + Relay
 - [x] Example of authentication using Relay
 - [x] PrivateRoute componente
@@ -120,8 +120,8 @@ This project was bootstrapped from [Laravel v5.8.33](https://laravel.com/docs/5.
 - config/lighthouse-graphql-passport.php
 - config/graphql-playground.php
 - resources/views/vendor/graphql-playground/index.blade.php
-- gralphql/schema.graphql
-- gralphql/auth.graphql
+- graphql/schema.graphql
+- graphql/auth.graphql
 - storage/app/lighthouse-schema.graphql *(generate using `yarn print-schema`)*
 
 ## @web

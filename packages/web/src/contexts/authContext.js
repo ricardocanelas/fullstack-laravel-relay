@@ -2,8 +2,8 @@ import React from 'react'
 import Cookie from 'js-cookie'
 import { useQuery } from 'relay-hooks'
 import { useMutation } from 'react-relay-mutation'
-import { ME_QUERY } from '../gralphql/query'
-import { LOGIN_MUTATION, LOGOUT_MUTATION } from '../gralphql/mutation'
+import { ME_QUERY } from '../graphql/query'
+import { LOGIN_MUTATION, LOGOUT_MUTATION } from '../graphql/mutation'
 
 const AuthContext = React.createContext()
 
