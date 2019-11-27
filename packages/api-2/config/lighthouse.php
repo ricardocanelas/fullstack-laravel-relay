@@ -32,6 +32,7 @@ return [
          */
         'middleware' => [
             \Nuwave\Lighthouse\Support\Http\Middleware\AcceptJson::class,
+            \Barryvdh\Cors\HandleCors::class,
         ],
 
         /*
