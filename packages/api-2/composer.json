@@ -1,5 +1,5 @@
 {
-    "name": "api",
+    "name": "fullstack-laravel-relay/api",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "barryvdh/laravel-cors": "^0.11.4",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^1.0",
