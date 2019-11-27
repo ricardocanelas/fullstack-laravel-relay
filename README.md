@@ -9,9 +9,12 @@ What we have here:
 - [x] A project using React + Relay
 - [x] Example of authentication using Relay
 - [x] PrivateRoute componente
+- [ ] Use Relay-Hooks
 - [ ] Create a TODO
 - [ ] Add Subscription
 - [ ] Package @mobile
+
+![](screencast.gif)
 
 ## Getting Start
 
