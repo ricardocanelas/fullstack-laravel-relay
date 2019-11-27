@@ -15,6 +15,17 @@ services:
       - ./packages/api:/var/www/html
     depends_on:
       - mysqldb
+  php-2:
+    build: .
+    container_name: fullstack-laravel-relay-php-2
+    ports:
+      - 8020:80
+    volumes:
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./docker/apache2/httpd-vhosts.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./packages/api-2:/var/www/html
+    depends_on:
+      - mysqldb
   myadmin:
     image: phpmyadmin/phpmyadmin:4.7
     container_name: fullstack-laravel-relay-phpmyadmin

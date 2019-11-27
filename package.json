@@ -27,6 +27,11 @@
     "api:print-schema": "docker exec fullstack-laravel-relay-php bash -c 'php artisan lighthouse:print-schema -W'",
     "web:start": "yarn workspace web start",
     "web:build:toapi": "yarn workspace web build:toapi",
-    "web:relay": "yarn workspace web relay"
+    "web:relay": "yarn workspace web relay",
+    "api-2:migrate": "docker exec fullstack-laravel-relay-php-2 bash -c 'php artisan migrate'",
+    "api-2:migrate:refresh": "docker exec fullstack-laravel-relay-php-2 bash -c 'php artisan migrate:refresh'",
+    "api-2:passport": "docker exec fullstack-laravel-relay-php-2 bash -c 'php artisan passport:install'",
+    "api-2:seed": "docker exec fullstack-laravel-relay-php-2 bash -c 'php artisan db:seed'",
+    "api-2:print-schema": "docker exec fullstack-laravel-relay-php-2 bash -c 'php artisan lighthouse:print-schema -W'"
   }
 }
