@@ -124,6 +124,28 @@ This project was bootstrapped from [Laravel v5.8.33](https://laravel.com/docs/5.
 - graphql/auth.graphql
 - storage/app/lighthouse-schema.graphql *(generate using `yarn print-schema`)*
 
+## @api-2
+
+This project was bootstrapped from [Laravel v6.6.0](https://laravel.com/docs/6.x/installation).
+
+**Some files has changed or added:**
+
+- composer.json
+  - "nuwave/lighthouse"
+  - "mll-lab/laravel-graphql-playground"
+  - "barryvdh/laravel-cors"
+- database/seeds/DatabaseSeeder.php
+- database/seeds/UsersTableSeeder.php
+- app/Http/Kernel *(added HandleCors::class)*
+- config/lighthouse.php
+- config/graphql-playground.php
+- graphql/schema.graphql
+
+**URLs:**
+
+- Site: http://localhost:8020/
+- GraphQL Playground: http://localhost:8020/graphql-playground
+
 ## @web
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) from v16.9.0
@@ -131,4 +153,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # License
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
